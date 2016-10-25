@@ -1,8 +1,7 @@
-//¼ì²âä¯ÀÀÆ÷ÊÇ·ñÖ§³ÖplaceholderÊôĞÔ
+//æ£€æµ‹æµè§ˆå™¨æ˜¯å¦æ”¯æŒplaceholderå±æ€§
 $.support.placeholder = false;
-//Ô´´úÂë
 if ("placeholder" in document.createElement("input")) $.support.placeholder = true;
-
+//æºä»£ç 
  $(function () {
 	  $.support.placeholder = false;
 	  if ("placeholder" in document.createElement("input")) $.support.placeholder = true;
