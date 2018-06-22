@@ -1,0 +1,20 @@
+  var tasks = [];
+  if (newItem.length) {
+      tasks.push(function () {
+          var $d = $.Deferred();
+          thisApp.addItem(newItem, function () {
+              $d.resolve();
+          });
+          return $d.promise();
+      })
+  }
+  if (deleteItem.length) {
+    tasks.push(function () {
+          var $d = $.Deferred();
+          thisApp.removeItem(deleteItem, function () {
+              $d.resolve();
+          });
+          return $d.promise();
+      })
+  }
+  tasks.reduce((previous, p) => previous.then(p), $.Deferred().resolve());
